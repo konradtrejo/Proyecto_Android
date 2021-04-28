@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.text.DecimalFormat;
+import java.util.logging.Logger;
+
+import metodos.Metodos;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -331,7 +334,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void setCalcular(View view) {
+        Metodos m = new Metodos();
+        String stringFunction = editTextFuncion.getText().toString();
+        String a = editTextValA.getText().toString();
+        String b = editTextValB.getText().toString();
+        String subintervalosS = editTextValN.getText().toString();
 
+        String  res = m.sendParams(stringFunction, a, b, subintervalosS);
+
+        editTextResult.setText(res);
     }
 
 }
