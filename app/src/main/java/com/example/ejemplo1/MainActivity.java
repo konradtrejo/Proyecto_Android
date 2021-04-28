@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editTextFuncion, editTextResult, editTextValA, editTextValB;
+    EditText editTextFuncion, editTextResult, editTextValA, editTextValB, editTextValN;
     DecimalFormat decimalFormat = new DecimalFormat("0.000");
-
+    Button calcular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
         editTextResult = (EditText) findViewById(R.id.edit_text_result);
         editTextValA = (EditText) findViewById(R.id.val_a);
         editTextValB= (EditText) findViewById(R.id.val_b);
+        editTextValN = (EditText) findViewById(R.id.val_n);
+        calcular = (Button) findViewById(R.id.calcular);
 
         editTextFuncion.setInputType(InputType.TYPE_NULL);
         editTextResult.setInputType(InputType.TYPE_NULL);
         editTextValB.setInputType(InputType.TYPE_NULL);
         editTextValA.setInputType(InputType.TYPE_NULL);
-
+        editTextValN.setInputType(InputType.TYPE_NULL);
 
     }
     public void  one(View view){
@@ -44,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"1");
+        }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"1");
         }
     }
     public void  two(View view){
@@ -59,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"2");
         }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"2");
+        }
     }
     public void  three(View view){
         if(editTextValA.hasFocus()){
@@ -71,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"3");
+        }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"3");
         }
     }
     public void  four(View view){
@@ -85,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"4");
         }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"4");
+        }
     }
     public void  five(View view){
         if(editTextValA.hasFocus()){
@@ -97,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"5");
+        }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"5");
         }
     }
     public void  six(View view){
@@ -111,6 +129,9 @@ public class MainActivity extends AppCompatActivity {
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"6");
         }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"6");
+        }
     }
     public void  seven(View view){
         if(editTextValA.hasFocus()){
@@ -124,7 +145,11 @@ public class MainActivity extends AppCompatActivity {
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"7");
         }
-    }public void  eight(View view){
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"7");
+        }
+    }
+    public void  eight(View view){
         if(editTextValA.hasFocus()){
 
             editTextValA.setText(editTextValA.getText()+ "8");
@@ -135,6 +160,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"8");
+        }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"8");
         }
     }
     public void  nine(View view){
@@ -149,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"9");
         }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"9");
+        }
     }
     public void  zero(View view){
         if(editTextValA.hasFocus()){
@@ -161,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(editTextFuncion.hasFocus()){
             editTextFuncion.setText(editTextFuncion.getText()+"0");
+        }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText(editTextValN.getText()+"0");
         }
     }
     public void punto(View view) {
@@ -181,15 +215,24 @@ public class MainActivity extends AppCompatActivity {
                 editTextValB.setText(editTextValB.getText() + ".");
                  }
              }
-            if(editTextValA.hasFocus()) {
 
-                if (editTextValA.getText().toString().contains(".")) {
+        if(editTextValA.hasFocus()) {
 
-                } else {
-                    editTextValA.setText(editTextValA.getText() + ".");
-                }
+            if (editTextValA.getText().toString().contains(".")) {
+
+            } else {
+                editTextValA.setText(editTextValA.getText() + ".");
             }
         }
+        if(editTextValN.hasFocus()) {
+
+            if (editTextValN.getText().toString().contains(".")) {
+
+            } else {
+                editTextValN.setText(editTextValN.getText() + ".");
+            }
+        }
+    }
     public void suma(View view){
         if(editTextFuncion.hasFocus()) {
             editTextFuncion.setText(editTextFuncion.getText() + "+");
@@ -262,6 +305,11 @@ public class MainActivity extends AppCompatActivity {
             editTextValB.setText("");
             editTextValB.setText(cap.toString().replaceFirst(".$",""));
         }
+        if(editTextValN.hasFocus()){
+            Editable cap =  editTextValN.getText();
+            editTextValN.setText("");
+            editTextValN.setText(cap.toString().replaceFirst(".$",""));
+        }
 
     }
     public void cerrar(View view){
@@ -278,6 +326,12 @@ public class MainActivity extends AppCompatActivity {
         if(editTextValB.hasFocus()){
             editTextValB.setText("");
         }
+        if(editTextValN.hasFocus()){
+            editTextValN.setText("");
+        }
+    }
+    public void setCalcular(View view) {
+
     }
 
 }

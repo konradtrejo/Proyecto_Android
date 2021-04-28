@@ -58,7 +58,7 @@
 
         <EditText
             android:id="@+id/val_a"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:hint="0"
             android:text=""
@@ -75,15 +75,30 @@
 
         <EditText
             android:id="@+id/val_b"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:hint="0"
             android:text=""
             android:textColor="@color/fontLight"
             android:textColorHint="#FFFFFF"
-            android:textSize="30dp">
+            android:textSize="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n="
+            android:textColor="@color/fontLight"
+            android:textSize="30dp"></TextView>
 
-        </EditText>
+        <EditText
+            android:id="@+id/val_n"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:text=""
+            android:textColor="@color/fontLight"
+            android:textColorHint="#FFFFFF"
+            android:textSize="30dp" />
+
 
     </LinearLayout>
 
@@ -97,10 +112,12 @@
         >
 
         <Button
+            android:id="@+id/calcular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:textAllCaps="false"
+            android:onClick="setCalcular"
             android:text="Calcular" />
 
         <EditText
@@ -193,7 +210,7 @@
             android:text="1"
             android:textSize="20dp"
             android:textColor="@color/fontLight"
-            android:backgroundTint="@color/btnnumerico"
+
             android:onClick="one"
             />
 
@@ -203,7 +220,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color"
             android:text="2"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textColor="@color/fontLight"
             android:textSize="20dp"
             android:onClick="two"
@@ -217,7 +234,7 @@
             android:text="3"
             android:textColor="@color/fontLight"
             android:textSize="20dp"
-            android:backgroundTint="@color/btnnumerico"
+
             android:onClick="three"
             />
 
@@ -248,7 +265,7 @@
             android:background="@drawable/color"
             android:text="4"
             android:textColor="@color/fontLight"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textSize="20dp"
             android:onClick="four"
             />
@@ -259,7 +276,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color"
             android:text="5"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textColor="@color/fontLight"
             android:textSize="20dp"
             android:onClick="five"
@@ -271,7 +288,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color"
             android:text="6"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textColor="@color/fontLight"
             android:textSize="20dp"
             android:onClick="six"
@@ -307,7 +324,7 @@
             android:text="7"
             android:textColor="@color/fontLight"
             android:textSize="20dp"
-            android:backgroundTint="@color/btnnumerico"
+
             android:onClick="seven"
             />
 
@@ -317,7 +334,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color"
             android:text="8"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textColor="@color/fontLight"
             android:textSize="20dp"
             android:onClick="eight"
@@ -328,7 +345,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/color"
-            android:backgroundTint="@color/btnnumerico"
+
             android:text="9"
             android:textColor="@color/fontLight"
             android:textSize="20dp"
@@ -388,7 +405,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color"
             android:text="0"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textColor="@color/fontLight"
             android:textSize="20dp"
             android:onClick="zero"
@@ -450,7 +467,7 @@
             android:background="@drawable/color"
             android:text="."
             android:textColor="@color/fontLight"
-            android:backgroundTint="@color/btnnumerico"
+
             android:textSize="20dp"
             android:onClick="punto"
             />
