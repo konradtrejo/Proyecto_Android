@@ -2,6 +2,7 @@ package com.example.appabogados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import clases.Cliente;
+import repositories.ClienteRepository;
 
 public class ClientesActivity extends AppCompatActivity {
 
@@ -39,6 +43,11 @@ public class ClientesActivity extends AppCompatActivity {
         String edad = editTextEdad.getText().toString();
         String celular = editTextCelular.getText().toString();
         // llama a la function add de tu helper o repository
-
+        Cliente abogado = new Cliente(nombres,apellidos,dni,edad,celular,direccion);
+        System.out.println("Cliente CREADO: ");
+        ClienteRepository cR = new ClienteRepository(this);
+        cR.add(abogado);
+        Intent amain = new Intent(ClientesActivity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(amain);
     }
 }

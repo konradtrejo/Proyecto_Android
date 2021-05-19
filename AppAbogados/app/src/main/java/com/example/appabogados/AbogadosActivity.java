@@ -2,6 +2,7 @@ package com.example.appabogados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,6 +10,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import clases.Abogado;
+import repositories.AbogadoRepository;
 
 public class AbogadosActivity extends AppCompatActivity {
 
@@ -43,5 +47,11 @@ public class AbogadosActivity extends AppCompatActivity {
         String celular = editTextCelular.getText().toString();
         // llama a la function add de tu helper o repository
 
+        Abogado abogado = new Abogado(nombres,apellidos,edad,celular,colegiatura,despacho);
+        System.out.println("ABOGADO CREADO: ");
+        AbogadoRepository aR = new AbogadoRepository(this);
+        aR.add(abogado);
+        Intent amain = new Intent(AbogadosActivity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(amain);
     }
 }
