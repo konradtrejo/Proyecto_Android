@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -20,6 +21,7 @@ public class AbogadosActivity extends AppCompatActivity {
             editTextCelular,editTextEdad, editTextDespacho;
     ArrayList arrayList;
     ListView listViewAbogados;
+    Button addAbogado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +33,15 @@ public class AbogadosActivity extends AppCompatActivity {
         editTextEdad = (EditText) findViewById(R.id.edit_edadA);
         editTextNombres = (EditText) findViewById(R.id.edit_nombresA);
         listViewAbogados = (ListView) findViewById(R.id.listView_abogados);
-
+        addAbogado = (Button) findViewById(R.id.btn_add_abogado);
 
         // llenar los spiner con los nombres de clientes y abogados con la logica que implementaste
         arrayList = new ArrayList();
         // enviar el list al adapter o como lo hayas implementado
 
     }
+
+
     public void setAddAbogados(View view){
         String nombres = editTextNombres.getText().toString();
         String apellidos = editTextApellidos.getText().toString();
